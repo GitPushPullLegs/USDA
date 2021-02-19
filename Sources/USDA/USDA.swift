@@ -35,7 +35,8 @@ public class USDA {
      - Parameter brandOwner: Optional. Filter based on brand. Only applies to Branded Foods.
      - Returns: Results in JSON format.
      */
-    public func search(_ searchTerms: String, dataType: String?, pageSize: Int?, pageNumber: Int?, sortBy: SearchFields?, sortOrder: SortOrder?, brandOwner: String?) {
+    public func search(_ searchTerms: String, dataType: String? = nil, pageSize: Int? = nil, pageNumber: Int? = nil,
+                       sortBy: SearchFields? = nil, sortOrder: SortOrder? = nil, brandOwner: String? = nil) {
         var queryItems: [URLQueryItem] = []
         if let dataType = dataType { queryItems.append(URLQueryItem(name: "dataType", value: dataType)) }
         if let pageSize = pageSize { queryItems.append(URLQueryItem(name: "pageSize", value: String(pageSize))) }
